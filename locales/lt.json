@@ -13,11 +13,11 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Bendrinti „Facebook“",
-        "share_on_twitter": "Skelbti „Twitter“",
+        "share_on_twitter": "Bendrinti X",
         "share_on_pinterest": "Skelbti „Pinterest“"
       },
       "links": {
-        "twitter": "„Twitter“",
+        "twitter": "X („Twitter“)",
         "facebook": "„Facebook“",
         "pinterest": "„Pinterest“",
         "instagram": "„Instagram“",
@@ -40,7 +40,7 @@
       "reset": "Išvalyti paieškos terminą"
     },
     "cart": {
-      "view": "Peržiūrėti mano krepšelį ({{ count }})",
+      "view": "Peržiūrėti krepšelį ({{ count }})",
       "item_added": "Prekė įdėta į jūsų krepšelį",
       "view_empty_cart": "Peržiūrėti krepšelį"
     },
@@ -123,7 +123,14 @@
         "label": "Kiekis",
         "input_label": "{{ product }} kiekis",
         "increase": "Padidinti {{ product }} kiekį",
-        "decrease": "Sumažinti {{ product }} kiekį"
+        "decrease": "Sumažinti {{ product }} kiekį",
+        "minimum_of": "Mažiausiai {{ quantity }}",
+        "maximum_of": "Daugiausiai {{ quantity }}",
+        "multiples_of": "Kiekis didėja kas {{ quantity }}",
+        "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> vnt. krepšelyje",
+        "note": "Peržiūrėti kiekių taisykles",
+        "min_of": "Min. {{ quantity }}",
+        "max_of": "Maks. {{ quantity }}"
       },
       "price": {
         "from_price_html": "Nuo {{ price }}",
@@ -151,7 +158,6 @@
         "image_available": "Vaizdas {{ index }} dabar prieinamas galerijos rodinyje"
       },
       "view_full_details": "Žiūrėti visą informaciją",
-      "include_taxes": "Mokesčiai įtraukti.",
       "shipping_policy_html": "<a href=\"{{ link }}\">Siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
       "choose_options": "Rinktis variantus",
       "choose_product_options": "Rinktis {{ product_name }} variantus",
@@ -163,7 +169,17 @@
       "inventory_low_stock_show_count": "Atsargos senka: liko {{ quantity }} vnt.",
       "inventory_out_of_stock": "Neturime",
       "inventory_out_of_stock_continue_selling": "Yra sandėlyje",
-      "sku": "SKU kodas"
+      "sku": "SKU kodas",
+      "volume_pricing": {
+        "title": "Kiekybinė kainodara",
+        "note": "Galima kiekybinė kainodara",
+        "minimum": "{{ quantity }}+",
+        "price_at_each": "po {{ price }}/vnt.",
+        "price_range": "{{ minimum }}–{{ maximum }}"
+      },
+      "taxes_included": "Mokesčiai įtraukti.",
+      "duties_included": "Muito mokesčiai įtraukti.",
+      "duties_and_taxes_included": "Muito ir kiti mokesčiai įtraukti."
     },
     "modal": {
       "label": "Medijų galerija"
@@ -202,7 +218,8 @@
       "clear_filter": "Pašalinti filtrą",
       "filter_selected_accessibility": "{{ type }} (pasirinkta filtrų: {{ count }})",
       "show_more": "Rodyti daugiau",
-      "show_less": "Rodyti mažiau"
+      "show_less": "Rodyti mažiau",
+      "filter_and_operator_subtitle": "Atitikti visas"
     }
   },
   "templates": {
@@ -223,7 +240,27 @@
         "other": "Rasti {{ count }} rezultatai (-ų) pagal užklausą „{{ terms }}“",
         "few": "Rasti {{ count }} rezultatai (-ų) pagal užklausą „{{ terms }}“",
         "many": "Rasti {{ count }} rezultatai (-ų) pagal užklausą „{{ terms }}“"
-      }
+      },
+      "results_pages_with_count": {
+        "one": "{{ count }} puslapis",
+        "other": "{{ count }} puslapiai (-ių)",
+        "few": "{{ count }} puslapiai (-ių)",
+        "many": "{{ count }} puslapiai (-ių)"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} pasiūlymas",
+        "other": "{{ count }} pasiūlymai (-ų)",
+        "few": "{{ count }} pasiūlymai (-ų)",
+        "many": "{{ count }} pasiūlymai (-ų)"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} gaminys",
+        "other": "{{ count }} gaminiai (-ių)",
+        "few": "{{ count }} gaminiai (-ių)",
+        "many": "{{ count }} gaminiai (-ių)"
+      },
+      "suggestions": "Pasiūlymai",
+      "pages": "Puslapiai"
     },
     "cart": {
       "cart": "Krepšelis"
@@ -260,17 +297,11 @@
       "title": "Jūsų krepšelis",
       "caption": "Krepšelio turinys",
       "remove_title": "Pašalinti {{ title }}",
-      "subtotal": "Tarpinė suma",
-      "new_subtotal": "Nauja tarpinė suma",
       "note": "Specialūs nurodymai dėl užsakymo",
       "checkout": "Atsiskaityti",
       "empty": "Jūsų krepšelis tuščias",
       "cart_error": "Atnaujinant krepšelį įvyko klaida. Bandykite dar kartą.",
       "cart_quantity_error_html": "Į krepšelį galite įdėti tik {{ quantity }}šios prekės vnt.",
-      "taxes_and_shipping_policy_at_checkout_html": "Mokesčiai ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojami atsiskaitant",
-      "taxes_included_but_shipping_at_checkout": "Mokesčiai įtraukti, o siuntimo išlaidos apskaičiuojamos atsiskaitant",
-      "taxes_included_and_shipping_policy_html": "Mokesčiai įtraukti. <a href=\"{{ link }}\">Siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
-      "taxes_and_shipping_at_checkout": "Mokesčiai ir siuntimo išlaidos apskaičiuojami atsiskaitant",
       "update": "Atnaujinti",
       "headings": {
         "product": "Gaminys",
@@ -282,7 +313,17 @@
       "login": {
         "title": "Turite paskyrą?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Prisijunkite</a> ir atsiskaitysite greičiau."
-      }
+      },
+      "estimated_total": "Apskaičiuota bendra suma",
+      "new_estimated_total": "Nauja apskaičiuota bendra suma",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Muito ir kiti mokesčiai įtraukti. Nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
+      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Muito ir kiti mokesčiai įtraukti. Nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant.",
+      "taxes_included_shipping_at_checkout_with_policy_html": "Mokesčiai įtraukti. Nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
+      "taxes_included_shipping_at_checkout_without_policy": "Mokesčiai įtraukti. Nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Muito mokesčiai įtraukti. Mokesčiai, nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
+      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Muito mokesčiai įtraukti. Mokesčiai, nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Mokesčiai, nuolaidos ir <a href=\"{{ link }}\">siuntimo išlaidos</a> apskaičiuojamos atsiskaitant.",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Mokesčiai, nuolaidos ir siuntimo išlaidos apskaičiuojamos atsiskaitant."
     },
     "footer": {
       "payment": "Mokėjimo būdai"
@@ -318,13 +359,52 @@
     },
     "page": {
       "title": "Puslapio pavadinimas"
+    },
+    "announcements": {
+      "previous_announcement": "Ankstesnis skelbimas",
+      "next_announcement": "Kitas skelbimas",
+      "carousel": "Karuselė",
+      "announcement": "Skelbimas",
+      "announcement_bar": "Skelbimo juosta"
+    },
+    "quick_order_list": {
+      "product_total": "Gaminių tarpinė suma",
+      "view_cart": "Peržiūrėti krepšelį",
+      "each": "{{ money }}/vnt.",
+      "product": "Gaminys",
+      "variant": "Variantas",
+      "variant_total": "Variantų bendra suma",
+      "items_added": {
+        "one": "Pridėta {{ quantity }} prekė",
+        "other": "Pridėtos {{ quantity }} prekės (-ių)",
+        "few": "Pridėtos {{ quantity }} prekės (-ių)",
+        "many": "Pridėtos {{ quantity }} prekės (-ių)"
+      },
+      "items_removed": {
+        "one": "Pašalinta {{ quantity }} prekė",
+        "other": "Pašalintos {{ quantity }} prekės (-ių)",
+        "few": "Pašalintos {{ quantity }} prekės (-ių)",
+        "many": "Pašalintos {{ quantity }} prekės (-ių)"
+      },
+      "product_variants": "Gaminio variantai",
+      "total_items": "Prekių iš viso",
+      "remove_all_items_confirmation": "Pašalinti visas {{ quantity }} prekes (-ių) iš krepšelio?",
+      "remove_all": "Pašalinti viską",
+      "cancel": "Atšaukti",
+      "remove_all_single_item_confirmation": "Pašalinti 1 prekę iš krepšelio?",
+      "min_error": "Nustatytas mažiausias šios prekės kiekis: {{ min }}",
+      "max_error": "Nustatytas didžiausias šios prekės kiekis: {{ max }}",
+      "step_error": "Galima pridėti tik po {{ step }} vnt. šios prekės"
     }
   },
   "localization": {
     "country_label": "Šalis / regionas",
     "language_label": "Kalba",
     "update_language": "Atnaujinti kalbą",
-    "update_country": "Atnaujinti šalį / regioną"
+    "update_country": "Atnaujinti šalį / regioną",
+    "search": "Ieškoti",
+    "popular_countries_regions": "Populiarios valstybės / regionai",
+    "country_results_count": "Rasta valstybių / regionų: {{ count }}"
   },
   "customer": {
     "account": {
@@ -377,7 +457,8 @@
       "password": "Slaptažodis",
       "title": "Prisijungimo vardas",
       "sign_in": "Prisijungti",
-      "submit": "Pateikti"
+      "submit": "Pateikti",
+      "alternate_provider_separator": "arba"
     },
     "order": {
       "title": "Užsakymas {{ name }}",
@@ -402,7 +483,8 @@
       "tracking_company": "Vežėjas",
       "tracking_number": "Sekimo numeris",
       "subtotal": "Tarpinė suma",
-      "total_duties": "Muito mokesčiai"
+      "total_duties": "Muito mokesčiai",
+      "total_refunded": "Kompensuota"
     },
     "orders": {
       "title": "Užsakymų istorija",
@@ -437,17 +519,34 @@
   },
   "gift_cards": {
     "issued": {
-      "title": "Štai jūsų {{ value }} vertės parduotuvės „{{ shop }}“ dovanų kortelė!",
+      "title": "Štai jūsų {{ value }} vertės parduotuvės {{ shop }} dovanų kortelė!",
       "subtext": "Jūsų dovanų kortelė",
       "gift_card_code": "Dovanų kortelės kodas",
-      "shop_link": "Tęsti apsipirkimą",
-      "remaining_html": "Liko {{ balance }}",
+      "shop_link": "Apsilankyti internetinėje parduotuvėje",
       "add_to_apple_wallet": "Pridėti prie „Apple Wallet“",
       "qr_image_alt": "QR kodas — nuskaitykite ir panaudokite dovanų kortelę",
-      "copy_code": "Kopijuoti kodą",
+      "copy_code": "Kopijuoti dovanų kortelės kodą",
       "expired": "Nebegalioja",
       "copy_code_success": "Kodą pavyko nukopijuoti",
-      "print_gift_card": "Spausdinti"
+      "how_to_use_gift_card": "Panaudokite dovanų kortelės kodą internetinėje parduotuvėje arba QR kodą fizinėje parduotuvėje",
+      "expiration_date": "Baigs galioti {{ expires_on }}"
+    }
+  },
+  "recipient": {
+    "form": {
+      "checkbox": "Noriu siųsti kaip dovaną",
+      "email_label": "Gavėjo el. pašto adresas",
+      "email": "El. pašto adresas",
+      "name_label": "Gavėjo vardas (pasirinktinai)",
+      "name": "Vardas",
+      "message_label": "Žinutė (pasirinktinai)",
+      "message": "Žinutė",
+      "max_characters": "Daugiausia {{ max_chars }} simbolių",
+      "email_label_optional_for_no_js_behavior": "Gavėjo el. pašto adresas (pasirinktinai)",
+      "send_on": "MMMM-MM-DD",
+      "send_on_label": "Išsiuntimo data (pasirinktinai)",
+      "expanded": "Išskleista dovanų kortelės gavėjo forma",
+      "collapsed": "Suskleista dovanų kortelės gavėjo forma"
     }
   }
 }
